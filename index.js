@@ -20,6 +20,10 @@ mongoose.connect('mongodb+srv://Admin:pDiGDgich3CcFvBw@cluster0.2tyy8.mongodb.ne
 
 const server = new ApolloServer({typeDefs, resolvers})
 
+app.get('/', (req, res) => {
+    res.redirect('/graphql');
+});
+
 //Local deployment
 server.start().then(() => {
     server.applyMiddleware({ app });
@@ -27,10 +31,3 @@ server.start().then(() => {
     const PORT = process.env.PORT || 3000;
     app.listen(PORT, () => console.log(`Server running on http://localhost:${PORT}${server.graphqlPath}`));
 });
-
-// // Vercel deployment
-// server.start().then(() => {
-//     server.applyMiddleware({ app });
-
-//     module.exports = createHandler(app); 
-// });
