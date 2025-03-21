@@ -10,7 +10,7 @@ const app = express();
 app.use(express.json()); // Make sure it comes back as json
 
 app.use(cors({
-  origin: ['http://localhost:4200'], 
+  origin: ['http://localhost:4200','http://localhost:3000'], 
   methods: 'GET,HEAD,PUT,PATCH,POST,DELETE',
   credentials: true,
 }));

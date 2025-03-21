@@ -98,7 +98,10 @@ const resolvers = {
         deleteEmployee: async (_, { id }) => {
             try {
                 deletedEmployee = await Employee.findByIdAndDelete(id)
-                return `Employee deleted successfully \n ${deletedEmployee}`
+                if(!deletedEmployee){
+                    throw new Error("Employee not found")
+                }
+                return deletedEmployee
             } catch (e) {
                 throw new Error(e.message);
             }

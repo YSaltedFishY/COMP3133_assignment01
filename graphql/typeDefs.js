@@ -75,7 +75,7 @@ const typeDefs = gql`
             employee_photo: String,
         ): Employee
 
-        deleteEmployee(id: ID!): String
+        deleteEmployee(id: ID!): Employee
     }
 `;
 
