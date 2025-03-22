@@ -10,7 +10,7 @@ const app = express();
 app.use(express.json()); // Make sure it comes back as json
 
 app.use(cors({
-  origin: ['http://localhost:4200','http://localhost:3000'], 
+  origin: ['http://localhost:4200','https://comp-3133-assignment2.vercel.app'], 
   methods: 'GET,HEAD,PUT,PATCH,POST,DELETE',
   credentials: true,
 }));
